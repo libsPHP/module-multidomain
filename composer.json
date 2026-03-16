@@ -1,0 +1,51 @@
+{
+    "name": "nativemind/module-multidomain",
+    "description": "Multi-domain to Store View mapping for Magento 2",
+    "type": "magento2-module",
+    "license": "NativeMindNONC",
+    "version": "1.0.0",
+    "keywords": [
+        "magento2",
+        "magento 2",
+        "multidomain",
+        "multi-store",
+        "store-view",
+        "domain-mapping"
+    ],
+    "authors": [
+        {
+            "name": "NativeMind",
+            "homepage": "https://github.com/nativemind"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "magento/framework": ">=103.0.0",
+        "magento/module-store": ">=101.0.0",
+        "magento/module-backend": ">=102.0.0"
+    },
+    "autoload": {
+        "files": [
+            "app/code/NativeMind/MultiDomain/registration.php"
+        ],
+        "psr-4": {
+            "NativeMind\\MultiDomain\\": "app/code/NativeMind/MultiDomain/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "map": [
+            [
+                "app/code/NativeMind/MultiDomain",
+                "NativeMind_MultiDomain"
+            ]
+        ]
+    }
+}
