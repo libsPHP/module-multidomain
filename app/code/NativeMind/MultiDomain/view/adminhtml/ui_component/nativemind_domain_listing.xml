@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">nativemind_domain_listing.nativemind_domain_listing_data_source</item>
+        </item>
+    </argument>
+
+    <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/edit"/>
+                <class>primary</class>
+                <label translate="true">Add New Domain</label>
+            </button>
+        </buttons>
+        <spinner>nativemind_domain_columns</spinner>
+        <deps>
+            <dep>nativemind_domain_listing.nativemind_domain_listing_data_source</dep>
+        </deps>
+    </settings>
+
+    <dataSource name="nativemind_domain_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider class="NativeMind\MultiDomain\Ui\DataProvider\DomainDataProvider"
+                      name="nativemind_domain_listing_data_source">
+            <settings>
+                <requestFieldName>domain</requestFieldName>
+                <primaryFieldName>domain</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters">
+            <filterSelect name="store_code" provider="${ $.parentName }">
+                <settings>
+                    <options class="NativeMind\MultiDomain\Ui\Source\StoreViewOptions"/>
+                    <caption translate="true">All Store Views</caption>
+                    <label translate="true">Store View</label>
+                    <dataScope>store_code</dataScope>
+                </settings>
+            </filterSelect>
+        </filters>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+
+    <columns name="nativemind_domain_columns">
+        <column name="domain" sortOrder="10">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Domain</label>
+            </settings>
+        </column>
+        <column name="store_code" sortOrder="20">
+            <settings>
+                <filter>select</filter>
+                <options class="NativeMind\MultiDomain\Ui\Source\StoreViewOptions"/>
+                <label translate="true">Store View</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="NativeMind\MultiDomain\Ui\Component\Listing\Column\Actions" sortOrder="100">
+            <settings>
+                <indexField>domain</indexField>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

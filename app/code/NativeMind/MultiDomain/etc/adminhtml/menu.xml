@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="NativeMind_MultiDomain::domain"
+             title="MultiDomain Mappings"
+             translate="title"
+             module="NativeMind_MultiDomain"
+             sortOrder="100"
+             parent="Magento_Backend::stores"
+             action="nativemind_multidomain/domain/index"
+             resource="NativeMind_MultiDomain::domain"/>
+    </menu>
+</config>

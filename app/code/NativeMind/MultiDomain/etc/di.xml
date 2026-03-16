@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/di.xsd">
+
+    <!-- Plugin for Store Resolver -->
+    <type name="Magento\Store\Model\StoreResolver">
+        <plugin name="nativemind_multidomain_store_resolver"
+                type="NativeMind\MultiDomain\Plugin\StoreResolverPlugin"
+                sortOrder="10"/>
+    </type>
+
+</config>
