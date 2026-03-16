@@ -2,8 +2,14 @@
     "name": "nativemind/module-multidomain",
     "description": "Multi-domain to Store View mapping for Magento 2",
     "type": "magento2-module",
-    "license": "proprietary",
+    "license": "NativeMindNONC",
     "version": "1.0.0",
+    "authors": [
+        {
+            "name": "NativeMind",
+            "homepage": "https://github.com/nativemind"
+        }
+    ],
     "require": {
         "php": ">=8.1",
         "magento/framework": ">=103.0.0",
